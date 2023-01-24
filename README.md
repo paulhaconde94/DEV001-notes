@@ -440,10 +440,21 @@ pasarte a esta sección.
 * [offlinefirst.org](http://offlinefirst.org/)
 * [Usando Service Workers - MDN](https://developer.mozilla.org/es/docs/Web/API/Service_Worker_API/Using_Service_Workers)
 * [Cómo habilitar datos sin conexión - Firebase Docs](https://firebase.google.com/docs/firestore/manage-data/enable-offline?hl=es-419)
+* [Lighthouse docs](https://developer.chrome.com/es/docs/lighthouse/)
+
+### Plataformas de Despliegue
+
+El proyecto será entregado subiendo tu código a GitHub (commit/push) y la interfaz será desplegada usando GitHub pages, Firebase Hosting, u otro servicio de hosting que puedas haber encontrado en el camino. (ej. Netlify, Vercel).
+
+* [Vercel y React](https://vercel.com/guides/deploying-react-with-vercel)
+* [Netlify y React](https://www.netlify.com/blog/2016/07/22/deploy-react-apps-in-less-than-30-seconds/)
+* [Github Pages y React](https://create-react-app.dev/docs/deployment/#github-pages-https-pagesgithubcom)
+
 
 ### Otros recursos
 
 * [create-react-app](https://create-react-app.dev/docs/getting-started)
+* [Nota para create-react-app](https://github.com/Laboratoria/DEV001-burger-queen#information_source-nota-para-estudiantes-que-elijan-react-y-create-react-app)
 * [npm-scripts](https://docs.npmjs.com/misc/scripts)
 * [deploy con gh-pages](https://medium.com/the-andela-way/how-to-deploy-your-react-application-to-github-pages-in-less-than-5-minutes-8c5f665a2d2a)
 * [Usando Service Workers - MDN](https://developer.mozilla.org/es/docs/Web/API/Service_Worker_API/Using_Service_Workers)
