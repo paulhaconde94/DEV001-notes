@@ -10,15 +10,14 @@
 * [6. Consideraciones técnicas](#6-consideraciones-técnicas)
 * [7. Hacker Edition](#7-hacker-edition)
 * [8. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)
-
+* [9. Para considerar Project Feedback](#9-para-considerar-project-feedback)
 ***
 
 ## 1. Preámbulo
 
 Hoy en día no es práctico imaginar el desarrollo web sin HTML, CSS y JavaScript,
 esta última es el alma del desarrollo de aplicaciones web.
-[React](https://reactjs.org/), [Angular](https://angular.io/) y [Vue](https://vuejs.org/)
-son algunos de los _frameworks_ y _librerías_ de JavaScript más utilizados por
+[React](https://reactjs.org/) es algunos de los _frameworks_ y _librerías_ de JavaScript más utilizados por
 lxs desarrolladorxs alrededor del mundo, y hay una razón para eso.
 En el contexto del navegador, [_mantener la interfaz sincronizada con el estado
 es difícil_](https://medium.com/dailyjs/the-deepest-reason-why-modern-javascript-frameworks-exist-933b86ebc445).
@@ -233,65 +232,6 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   * [Obtén actualizaciones en tiempo real con Cloud Firestore - Documentación oficial](https://firebase.google.com/docs/firestore/query-data/listen?hl=es)
 </p></details>
 
-### Angular
-
-- [ ] **Components & templates**
-
-  <details><summary>Links</summary><p>
-
-  * [Angular Components Overview - Documentación oficial (en inglés)](https://angular.io/guide/component-overview)
-  * [Introduction to components and templates - Documentación oficial (en inglés)](https://angular.io/guide/architecture-components#introduction-to-components)
-</p></details>
-
-- [ ] **Directivas estructurales (ngIf / ngFor)**
-
-  <details><summary>Links</summary><p>
-
-  * [Writing structural directives - Documentación oficial (en inglés)](https://angular.io/guide/structural-directives)
-</p></details>
-
-- [ ] **@Input | @Output**
-
-  <details><summary>Links</summary><p>
-
-  * [Component interaction - Documentación oficial (en inglés)](https://angular.io/guide/component-interaction#component-interaction)
-</p></details>
-
-- [ ] **Creación y uso de servicios**
-
-  <details><summary>Links</summary><p>
-
-  * [Providing services - Documentación oficial (en inglés)](https://angular.io/guide/architecture-services#providing-services)
-</p></details>
-
-- [ ] **Manejo de rutas**
-
-  <details><summary>Links</summary><p>
-
-  * [In-app navigation: routing to views - Documentación oficial (en inglés)](https://angular.io/guide/router)
-</p></details>
-
-- [ ] **Creación y uso de Observables.**
-
-  <details><summary>Links</summary><p>
-
-  * [Observables in Angular - Documentación oficial (en inglés)](https://angular.io/guide/observables-in-angular)
-</p></details>
-
-- [ ] **Uso de HttpClient**
-
-  <details><summary>Links</summary><p>
-
-  * [Communicating with backend services using HTTP - Documentación oficial (en inglés)](https://angular.io/guide/http)
-</p></details>
-
-- [ ] **Estilos de componentes (ngStyle / ngClass)**
-
-  <details><summary>Links</summary><p>
-
-  * [Template syntax - Documentación oficial (en inglés)](https://angular.io/guide/template-syntax#built-in-directives)
-</p></details>
-
 ### React
 
 - [ ] **JSX**
@@ -355,79 +295,6 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   <details><summary>Links</summary><p>
 
   * [Quick Start - Documentación oficial (en inglés)](https://reactrouter.com/web/guides/quick-start)
-</p></details>
-
-### Vue
-
-- [ ] **Instancia de Vue.js**
-
-  <details><summary>Links</summary><p>
-
-  * [La instancia Vue - Documentación oficial](https://es.vuejs.org/v2/guide/instance.html)
-</p></details>
-
-- [ ] **Datos y métodos**
-
-  <details><summary>Links</summary><p>
-
-  * [Datos y Métodos - Documentación oficial](https://es.vuejs.org/v2/guide/instance.html#Datos-y-Metodos)
-</p></details>
-
-- [ ] **Uso y creación de componentes**
-
-  <details><summary>Links</summary><p>
-
-  * [Conceptos Básicos de Componentes - Documentación oficial](https://es.vuejs.org/v2/guide/components.html)
-</p></details>
-
-- [ ] **Props**
-
-  <details><summary>Links</summary><p>
-
-  * [Pasando datos a componentes secundarios con Props - Documentación oficial](https://es.vuejs.org/v2/guide/components.html#Pasando-datos-a-componentes-secundarios-con-Props)
-</p></details>
-
-- [ ] **Directivas (v-bind | v-model)**
-
-  <details><summary>Links</summary><p>
-
-  * [v-bind - Documentación oficial](https://es.vuejs.org/v2/api/#v-bind)
-  * [Binding en Formularios - Documentación oficial](https://es.vuejs.org/v2/guide/forms.html)
-</p></details>
-
-- [ ] **Iteración (v-for)**
-
-  <details><summary>Links</summary><p>
-
-  * [Mapeando una matriz a elementos con v-for - Documentación oficial](https://es.vuejs.org/v2/guide/list.html#Mapeando-una-matriz-a-elementos-con-v-for)
-</p></details>
-
-- [ ] **Eventos (v-on)**
-
-  <details><summary>Links</summary><p>
-
-  * [Manejo de eventos - Documentación oficial](https://es.vuejs.org/v2/guide/events.html)
-</p></details>
-
-- [ ] **Propiedades Computadas y Observadores**
-
-  <details><summary>Links</summary><p>
-
-  * [Propiedades Computadas y Observadores](https://es.vuejs.org/v2/guide/computed.html)
-</p></details>
-
-- [ ] **Routing**
-
-  <details><summary>Links</summary><p>
-
-  * [Getting Started - Documentación oficial de Vue Router](https://router.vuejs.org/guide/#html)
-</p></details>
-
-- [ ] **Clases y Estilos**
-
-  <details><summary>Links</summary><p>
-
-  * [Enlace Clases y Estilos - Documentación oficial](https://es.vuejs.org/v2/guide/class-and-style.html)
 </p></details>
 
 ## 4. Consideraciones generales
@@ -529,7 +396,7 @@ aunque no serán los únicos archivos que quizás tendrás que crear.
   ser una buena practica tener configurado un linter.
 
 Para este proyecto necesitas crear una Web App con **una librería o
-framework de JavaScript** (`React`, `Angular` o `Vue`) y **Firebase**.
+framework de JavaScript** (`React` en este caso) y **Firebase**.
 
 Para este proyecto tendrás que manejar _vistas_. Esto significa que cada sección
 tendrá su propia URL, la cual indica que _vista_ o _componente_ será mostrado en
@@ -558,8 +425,7 @@ pasarte a esta sección.
 ### Frameworks / libraries
 
 * [React](https://reactjs.org/)
-* [Angular](https://angular.io/)
-* [Vue](https://es.vuejs.org/index.html)
+* [Presentando Hooks](https://es.reactjs.org/docs/hooks-intro.html)
 
 ### Herramientas
 
@@ -582,3 +448,11 @@ pasarte a esta sección.
 * [deploy con gh-pages](https://medium.com/the-andela-way/how-to-deploy-your-react-application-to-github-pages-in-less-than-5-minutes-8c5f665a2d2a)
 * [Usando Service Workers - MDN](https://developer.mozilla.org/es/docs/Web/API/Service_Worker_API/Using_Service_Workers)
 * [What is a Single Page Application](https://medium.com/@NeotericEU/single-page-application-vs-multiple-page-application-2591588efe58)
+
+## 9. Para considerar Project Feedback
+* [ ] Cumplir con 4 historias de _backlog_ que agrega el Product Owner.
+* [ ] La aplicación debe adaptarse y estar optimizada para usarse en una tablet, no debe ser una app nativa, sino una web app que sea mobile-first.
+* [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions, lines, y branches.
+* [ ] Pasa tests (y linters) (`npm test`).
+* [ ] La aplicación esta desplegada en una plataforma de hosting tal como: GitHub Pages, Firebase Hosting, Netlify, Vercel, etc.
+* [ ] La aplicación desplegada debe tener 80% o más de las puntuaciones de Performance, Progressive Web App, Accessibility y Best Practices de Lighthouse.
