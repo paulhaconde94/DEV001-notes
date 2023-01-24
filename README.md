@@ -17,7 +17,7 @@
 
 Hoy en día no es práctico imaginar el desarrollo web sin HTML, CSS y JavaScript,
 esta última es el alma del desarrollo de aplicaciones web.
-[React](https://reactjs.org/) es algunos de los _frameworks_ y _librerías_ de JavaScript más utilizados por
+[React](https://reactjs.org/) es uno de los _frameworks_ y _librerías_ de JavaScript más utilizados por
 lxs desarrolladorxs alrededor del mundo, y hay una razón para eso.
 En el contexto del navegador, [_mantener la interfaz sincronizada con el estado
 es difícil_](https://medium.com/dailyjs/the-deepest-reason-why-modern-javascript-frameworks-exist-933b86ebc445).
