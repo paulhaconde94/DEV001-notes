@@ -299,7 +299,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 ## 4. Consideraciones generales
 
-* Este proyecto puede "resolver" de forma individual o en dupla.
+* Este proyecto se puede "resolver" de forma individual o en dupla.
 
 * Trabaja en una historia hasta terminarla antes de pasar a la siguiente.
 
