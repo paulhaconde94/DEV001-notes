@@ -299,10 +299,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 ## 4. Consideraciones generales
 
-* Este proyecto se debe "resolver" de forma individual.
-
-* La duración estimada del proyecto es de 4 sprints, con una duración de una
-  semana cada uno.
+* Este proyecto se puede "resolver" de forma individual o en dupla.
 
 * Trabaja en una historia hasta terminarla antes de pasar a la siguiente.
 
