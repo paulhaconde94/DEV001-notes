@@ -1,27 +1,38 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { loginWithGoogle } from "../firebase/firebase-init";
 import logo from '../assets/LogoWC.png';
 import google from '../assets/googleLogin.png';
 //import './Login.css';
 
 const Login = () => {
     const navigate = useNavigate();
-    const responseGoogle = (response) => {
+    const signInWithGoogle = () => {
+        loginWithGoogle().then((res) => {
+            const displayNameUser = res.user.displayName;
+            const emailUser = res.user.email;
+            //actualiza un valor si la clave ya existe
+            localStorage.setItem("name", displayNameUser);
+            localStorage.setItem("email", emailUser);
+            navigate("/board");
+          })
+          .catch( console.error )
     };
-
-
+    
     return (
         <>
-        <div className="login">
-            <section className="login-form" />
+        <div className="frame-remind-login">
+            <section id = "frame-login-form" className="frame-login-form" />
+            <span className="container-text-login">
             <img className="logo" alt="logo" src={logo} />
-            <h3>Lorem ipsum dolor sit amet. Aut amet molestiae est enim perferendis qui
-                dicta magnam eos quia distinctio! Sed eveniet quasi id inventore iure ea distinctio sapiente.
-            </h3>
-        </div>
-        <button className="button-login">
-                <img className="google" alt="google" src={google} /> Inicia con Google
+            <h3> Write Coffee es una app de notas que te ayudará a organizar tus tareas y pendientes.</h3>
+            </span>    
+        <button className="button-login" onClick={signInWithGoogle}>
+                <img className="google" alt="google" src={google}/> Inicia con Google
+                
             </button>
+
+            </div>
         </>      
     );
 
