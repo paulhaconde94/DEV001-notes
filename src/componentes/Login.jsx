@@ -19,6 +19,9 @@ const Login = () => {
           .catch( console.error )
     };
     console.log("Esto es una prueba para flow de git")
+    const login2 = () =>{
+       return null 
+    }
     return (
         <>
         <div className="frame-remind-login">
