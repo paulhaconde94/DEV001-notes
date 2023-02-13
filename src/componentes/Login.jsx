@@ -19,7 +19,7 @@ const Login = () => {
           .catch( console.error )
     };
     console.log("Esto es una prueba para flow de git")
-    const login2 = () =>{
+    const login3 = () =>{
        return null 
     }
     return (
