@@ -1,0 +1,79 @@
+:root {
+    display: flex;
+	align-items: center;
+	justify-content: center; 
+    font-family: 'Poppins', sans-serif;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    color: #A09E9E;
+    background-color: #A09E9E;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 400'%3E%3Cdefs%3E%3CradialGradient id='a' cx='396' cy='281' r='514' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%239777CD'/%3E%3Cstop offset='1' stop-color='%23A09E9E'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='400' y1='148' x2='400' y2='333'%3E%3Cstop offset='0' stop-color='%23CBCBCB' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23CBCBCB' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='800' height='400'/%3E%3Cg fill-opacity='0.33'%3E%3Ccircle fill='url(%23b)' cx='267.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='532.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='400' cy='30' r='300'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+
+  .frame-remind-login{
+    margin: 0px;
+    padding: 0px;
+    width: 550px;
+    height: 600px;
+    left: calc(50% - 564px/2);
+    top: calc(50% - 355px/2);
+    background: rgba(255, 255, 255, 0.822);
+    box-shadow: 12px 12px 4px 4px rgba(0, 0, 0, 0.09);
+    border-radius: 40px;
+    opacity: 0.7;
+    };
+
+    .container-text-login{
+        background-size: 100%;
+
+    }
+
+  h3 {
+    margin-top: -50px;
+    font-size: 25px;
+    line-height: 35px;
+    text-align: center;
+    color: #5C5F61;
+    left: 233px;
+    top: 452px;
+    font-weight: 300;
+  }
+
+
+  button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    color-scheme: light dark; 
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    background-color: #9777CD;
+    cursor: pointer;
+    transition: border-color 0.25s;
+  }
+
+  button:hover {
+    border-color: #9777CD;
+  }
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+
+  .logo{
+    height: 350px;
+  }
+
+  
