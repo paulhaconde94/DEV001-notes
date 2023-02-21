@@ -15,38 +15,26 @@ const Login = () => {
             localStorage.setItem("name", displayNameUser);
             localStorage.setItem("email", emailUser);
             navigate("/board");
-          })
-          .catch( console.error )
+        })
+            .catch(console.error)
     };
- 
-    
+
     return (
-        <>
-        <div className="frame-remind-login">
-            <section id = "frame-login-form" className="frame-login-form"></section>
-            <span className="container-text-login">
-            <img className="logo" alt="logo" src={logo} />
-            <h3> Write Coffee es una app de notas que te ayudará a organizar tus tareas y pendientes.</h3>
-            </span>    
-        <button className="button-login" onClick={signInWithGoogle}>
-                <img className="google" alt="google" src={google}/> Inicia con Google
-                
-            </button>
+        <div className="main-container">
+            <div className="frame-remind-login">
+                <section id="frame-login-form" className="frame-login-form"></section>
+                <span className="container-text-login">
+                    <img className="logo" alt="logo" src={logo} />
+                    <h3 className="description"> Write Coffee es una app de notas que te ayudará a organizar tus tareas y pendientes.</h3>
+                </span>
+                <button className="button-login" onClick={signInWithGoogle}>
+                    <img className="google" alt="google" src={google} /> Inicia con Google
+                </button>
 
             </div>
-        </>      
+        </div>
     );
-
-
-
 
 }
 
-
-
-
-
-
-
-
-   export default Login;
+export default Login;
