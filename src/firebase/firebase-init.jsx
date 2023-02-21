@@ -3,6 +3,10 @@ import {getAuth, GoogleAuthProvider, signInWithPopup} from "firebase/auth";
 import {
   getFirestore,
   collection,
+  addDoc,
+  doc,
+  getDocs,
+  query
 
 
 } from "firebase/firestore";
@@ -26,11 +30,11 @@ export const googlePopUp = () => signInWithPopup(auth, provider);
 export const loginWithGoogle = () => {
   const auth = getAuth();
   const user = auth.currentUser;
-if (user !== null) {
+  if (user !== null) {
   const displayNameUser = user.displayName;
   const emailUser = user.email;
-  //const photoURLUser = user.photoURL;
-  //const emailVerifiedUser = user.emailVerified;
+  const photoURLUser = user.photoURL;
+  const emailVerifiedUser = user.emailVerified;
 
   const uid = user.uid;
   console.log("usuario ingresado: ", emailUser)
@@ -42,3 +46,17 @@ if (user !== null) {
 export { GoogleAuthProvider };
 
 export const db = getFirestore(app);
+
+export  const saveNote = (title, description) =>{
+  addDoc(collection(db, "notas"), { title, description });
+};
+
+export async function getNotes() {
+  const collectNotes = query(collection(db, "notas"));
+  return getDocs(collectNotes).then((QuerySnapshot) => {
+    return QuerySnapshot.docs.map((docu) => ({
+      data: docu.data(),
+      id: doc.id,
+    }));
+  });
+}

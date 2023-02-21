@@ -1,0 +1,33 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+}
+
+.logo{
+    height: 90px;
+
+}
+
+.board-header{
+    margin-bottom: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aliceblue;
+}
+
+.board-header-left{
+    display: flex;
+    align-items: center;
+}
+.logOut{
+    height: 80%;
+}
+
+
