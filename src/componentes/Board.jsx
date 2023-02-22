@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from '../assets/logoHeader.png';
 import logoText from '../assets/tituloHeader.png';
 import { getNotes, saveNote } from "../firebase/firebase-init";
@@ -7,11 +7,9 @@ import './Board.css';
 const Board = () => {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
-    const [setListNotes] = useState([]);
+    const [listNotes, setListNotes] = useState([]);
 
-
-    const saveData = (data, e) => {
-        e.preventDefault();
+    const saveData = () => {
         saveNote(title, description);
         getListNotes();
         //Para reiniciar los campos como vacios luego que de se realizará una publicación
@@ -26,6 +24,11 @@ const Board = () => {
             })
             .catch((error) => console.error("Estos catch", error));
     };
+
+
+    useEffect(() => {
+        getListNotes();
+    }, []);
 
 
     return (
@@ -63,8 +66,15 @@ const Board = () => {
 
                 </div>
             </div>
-            <button className="btn-guardar-notas" type="button">Guardar Nota</button>
+            <button className="btn-guardar-notas" onClick={saveData}>Guardar Nota</button>
+            {listNotes.map((item) => (
+            <div className="individualNotesContainer" key={item.id}>
+              <p>{item.data.title}</p>
+              <p>{item.data.description}</p>
 
+            </div>
+            
+            ))}
         </>
     );
 
