@@ -67,8 +67,8 @@ const Board = () => {
                 </div>
             </div>
             <button className="btn-guardar-notas" onClick={saveData}>Guardar Nota</button>
-            {listNotes.map((item) => (
-            <div className="individualNotesContainer" key={item.id}>
+            {listNotes.map((item, index) => (
+            <div className="individualNotesContainer" key={`${index}-${item.data.title}`}>
               <p>{item.data.title}</p>
               <p>{item.data.description}</p>
 
