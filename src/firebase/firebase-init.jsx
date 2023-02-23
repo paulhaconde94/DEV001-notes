@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import {getAuth, GoogleAuthProvider, signInWithPopup} from "firebase/auth";
+import {getAuth, GoogleAuthProvider, signInWithPopup, signOut} from "firebase/auth";
 import {
   getFirestore,
   collection,
@@ -27,6 +27,9 @@ export const auth = getAuth (app);
 export const provider = new GoogleAuthProvider();
 export const googlePopUp = () => signInWithPopup(auth, provider);
 
+export const boardSignOut = async () => {
+  await signOut(auth);
+}
 export const loginWithGoogle = () => {
   const auth = getAuth();
   const user = auth.currentUser;

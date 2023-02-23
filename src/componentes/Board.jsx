@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import logo from '../assets/logoHeader.png';
 import logoText from '../assets/tituloHeader.png';
-import { getNotes, saveNote } from "../firebase/firebase-init";
+import { getNotes, saveNote, auth, boardSignOut} from "../firebase/firebase-init";
 import './Board.css';
 
 const Board = () => {
@@ -30,6 +31,17 @@ const Board = () => {
         getListNotes();
     }, []);
 
+    const navigate = useNavigate();
+    const logOut = () => {
+      boardSignOut (auth).then(() =>{
+        console.log("Sesión cerrada con exito");
+        navigate('/')
+
+      }).catch((error) =>{
+        console.error(error)
+      })
+}
+
 
     return (
         <>
@@ -38,7 +50,7 @@ const Board = () => {
                     <img src={logo} className="board-logo" alt="logo" />
                     <img src={logoText} className="logoText" alt="logoText" />
                 </div>
-                <button className="logOut"> Cerrar sesión </button>
+                <button className="logOut" onClick={logOut}> Cerrar sesión </button>
             </header>
 
             <h3> Agrega tu nota </h3>
@@ -68,12 +80,12 @@ const Board = () => {
             </div>
             <button className="btn-guardar-notas" onClick={saveData}>Guardar Nota</button>
             {listNotes.map((item, index) => (
-            <div className="individualNotesContainer" key={`${index}-${item.data.title}`}>
-              <p>{item.data.title}</p>
-              <p>{item.data.description}</p>
+                <div className="individualNotesContainer" key={`${index}-${item.data.title}`}>
+                    <p>{item.data.title}</p>
+                    <p>{item.data.description}</p>
 
-            </div>
-            
+                </div>
+
             ))}
         </>
     );
