@@ -36,10 +36,6 @@ export const loginWithGoogle = () => {
   if (user !== null) {
   const displayNameUser = user.displayName;
   const emailUser = user.email;
-  const photoURLUser = user.photoURL;
-  const emailVerifiedUser = user.emailVerified;
-
-  const uid = user.uid;
   console.log("usuario ingresado: ", emailUser)
   console.log("usuario display: ", displayNameUser)
 }
