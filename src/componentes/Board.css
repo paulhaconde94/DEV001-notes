@@ -44,7 +44,23 @@ body,
 
 h3{
     color: #A09E9E;
+    line-height: 46px;
+    text-align: center;
+    left: 233px;
+    top: 452px;
+    font-weight: 400;
+    font-size: 20px;
 }
+
+
 .individualNotesContaine{
     color:aliceblue;
 }
+
+.containerAllNotes{
+    display: grid;
+    grid-template-columns: 250px 250px;
+    margin-left : 80px;
+    margin-right: 20px;
+}
+

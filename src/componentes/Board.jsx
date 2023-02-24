@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from '../assets/logoHeader.png';
 import logoText from '../assets/tituloHeader.png';
-import { getNotes, saveNote, auth, boardSignOut} from "../firebase/firebase-init";
+import { getNotes, saveNote, auth, boardSignOut } from "../firebase/firebase-init";
 import './Board.css';
 
 const Board = () => {
@@ -33,14 +33,14 @@ const Board = () => {
 
     const navigate = useNavigate();
     const logOut = () => {
-      boardSignOut (auth).then(() =>{
-        console.log("Sesión cerrada con exito");
-        navigate('/')
+        boardSignOut(auth).then(() => {
+            console.log("Sesión cerrada con exito");
+            navigate('/')
 
-      }).catch((error) =>{
-        console.error(error)
-      })
-}
+        }).catch((error) => {
+            console.error(error)
+        })
+    }
 
 
     return (
@@ -52,6 +52,12 @@ const Board = () => {
                 </div>
                 <button className="logOut" onClick={logOut}> Cerrar sesión </button>
             </header>
+            <div className="notes-dataAll-user">
+                <h4 className="notes-data-user">
+                    Usuario Conectado: {localStorage.getItem("name")}
+                </h4>
+                <h4 className="notes-data-user"> {localStorage.getItem("email")}</h4>
+            </div>
 
             <h3> Agrega tu nota </h3>
 
