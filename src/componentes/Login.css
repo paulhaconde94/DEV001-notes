@@ -63,6 +63,10 @@ button {
   transition: border-color 0.25s;
 }
 
+.button-login {
+  color: white;
+}
+
 .google{
   
   margin-bottom: -15px;
@@ -80,6 +84,9 @@ button:focus-visible {
 .logo {
   height: 350px;
   margin-bottom: -45px;
+  max-width: 350px;
+  width: 100%;
+  overflow: hidden;
 }
 
 /* TABLET STYLE */
