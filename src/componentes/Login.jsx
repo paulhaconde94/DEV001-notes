@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { loginWithGoogle } from "../firebase/firebase-init";
-import logo from '../assets/LogoWC.png';
+import logo from '../assets/loginLogo.png';
 import google from '../assets/googleLogin.png';
 import './Login.css';
 
