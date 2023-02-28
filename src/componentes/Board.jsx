@@ -2,16 +2,24 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from '../assets/logoHeader.png';
 import logoText from '../assets/tituloHeader.png';
-import { getNotes, saveNote, auth, boardSignOut } from "../firebase/firebase-init";
+import { getNotes, saveNote, auth, boardSignOut, editNotes } from "../firebase/firebase-init";
+import iconoEdit from '../assets/iconoEdit.png';
 import './Board.css';
 
 const Board = () => {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [listNotes, setListNotes] = useState([]);
+    const [oldData, setOldData] = useState("");
+    const [editStatusNote, setEditStatusNote] = useState(false);
 
-    const saveData = () => {
-        saveNote(title, description);
+    const saveData = async() => {
+        if(editStatusNote){
+            console.log(oldData)
+            await editNotes(oldData, { title: title, description: description });
+        }else{
+            saveNote(title, description);
+        }
         getListNotes();
         //Para reiniciar los campos como vacios luego que de se realizará una publicación
         setTitle("");
@@ -41,6 +49,14 @@ const Board = () => {
             console.error(error)
         })
     }
+
+    const editData = (item) => {
+        setTitle(item.data.title);
+        setDescription(item.data.description);
+        setOldData(item);
+        setEditStatusNote(true);
+    };
+
 
 
     return (
@@ -85,16 +101,22 @@ const Board = () => {
                 </div>
             </div>
             <button className="btn-guardar-notas" onClick={saveData}>Guardar Nota</button>
-            
+
             <div className="box-note">
-            {listNotes.map((item, index) => (
-                <div className="individualNotesContainer" key={`${index}-${item.data.title}`}>
-                    <p>{item.data.title}</p>
-                    <p>{item.data.description}</p>
+                {listNotes.map((item, index) => (
+                    <div className="individualNotesContainer" key={`${index}-${item.data.title}`}>
+                        <p>{item.data.title}</p>
+                        <p>{item.data.description}</p>
+                        <button
+                            type="button"
+                            className="individualNotesEdit"
+                            onClick={() => editData(item)}>
+                            <img className="iconoEdit" alt="iconoEdit" src={iconoEdit} />
+                        </button>
 
-                </div>
+                    </div>
 
-            ))}
+                ))}
 
             </div>
         </>

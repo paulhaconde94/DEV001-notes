@@ -6,7 +6,10 @@ import {
   addDoc,
   doc,
   getDocs,
-  query
+  query,
+  updateDoc
+  
+  
 
 
 } from "firebase/firestore";
@@ -55,7 +58,15 @@ export async function getNotes() {
   return getDocs(collectNotes).then((QuerySnapshot) => {
     return QuerySnapshot.docs.map((docu) => ({
       data: docu.data(),
-      id: doc.id,
+      id: docu.id,
     }));
   });
 }
+
+export async function editNotes(item, newObj) {
+  await updateDoc(doc(collection(db, "notas"), item.id), {
+    title: newObj.title,
+    description: newObj.description,
+  })
+}
+
