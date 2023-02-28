@@ -11,7 +11,6 @@ const Login = () => {
         loginWithGoogle().then((res) => {
             const displayNameUser = res.user.displayName;
             const emailUser = res.user.email;
-            //actualiza un valor si la clave ya existe
             localStorage.setItem("name", displayNameUser);
             localStorage.setItem("email", emailUser);
             navigate("/board");

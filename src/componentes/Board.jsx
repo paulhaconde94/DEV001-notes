@@ -59,7 +59,7 @@ const Board = () => {
                 <h4 className="notes-data-user"> {localStorage.getItem("email")}</h4>
             </div>
 
-            <h3> Agrega tu nota </h3>
+            <h3 className="add-text"> Agrega tu nota </h3>
 
             <div>
                 <div className="note-container">
@@ -85,6 +85,8 @@ const Board = () => {
                 </div>
             </div>
             <button className="btn-guardar-notas" onClick={saveData}>Guardar Nota</button>
+            
+            <div className="box-note">
             {listNotes.map((item, index) => (
                 <div className="individualNotesContainer" key={`${index}-${item.data.title}`}>
                     <p>{item.data.title}</p>
@@ -93,6 +95,8 @@ const Board = () => {
                 </div>
 
             ))}
+
+            </div>
         </>
     );
 
