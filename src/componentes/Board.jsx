@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from '../assets/logoHeader.png';
 import logoText from '../assets/tituloHeader.png';
-import { getNotes, saveNote, auth, boardSignOut, editNotes } from "../firebase/firebase-init";
+import { getNotes, saveNote, auth, boardSignOut, editNotes, onDeleteNotes  } from "../firebase/firebase-init";
 import iconoEdit from '../assets/iconoEdit.png';
+import iconoDelete from '../assets/iconoDelete.png';
 import './Board.css';
 
 const Board = () => {
@@ -16,9 +17,9 @@ const Board = () => {
     const saveData = async() => {
         if(editStatusNote){
             console.log(oldData)
-            await editNotes(oldData, { title: title, description: description });
+            await editNotes(oldData, { title: title, description: description } ,userId);
         }else{
-            saveNote(title, description);
+            saveNote(title, description, userId);
         }
         getListNotes();
         //Para reiniciar los campos como vacios luego que de se realizará una publicación
@@ -27,7 +28,7 @@ const Board = () => {
     };
 
     const getListNotes = () => {
-        getNotes()
+        getNotes(userId)
             .then((items) => {
                 setListNotes(items);
             })
@@ -56,8 +57,12 @@ const Board = () => {
         setOldData(item);
         setEditStatusNote(true);
     };
-
-
+    
+    const deleteNotesData = (id, userId) => {
+        onDeleteNotes(id, userId);
+        getListNotes();
+      };
+    const userId = localStorage.getItem("email")
 
     return (
         <>
@@ -77,7 +82,8 @@ const Board = () => {
 
             <h3 className="add-text"> Agrega tu nota </h3>
 
-            <div>
+            
+                <div className="postNote-container">
                 <div className="note-container">
 
                     <input
@@ -86,8 +92,6 @@ const Board = () => {
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
                     />
-
-
                 </div>
                 <div className="postNote-container">
 
@@ -99,10 +103,10 @@ const Board = () => {
                     />
 
                 </div>
-            </div>
-            <button className="btn-guardar-notas" onClick={saveData}>Guardar Nota</button>
-
-            <div className="box-note">
+                </div>
+        
+                <button className="btn-guardar-notas" onClick={saveData}>Guardar Nota</button>
+                <div className="box-note">
                 {listNotes.map((item, index) => (
                     <div className="individualNotesContainer" key={`${index}-${item.data.title}`}>
                         <p>{item.data.title}</p>
@@ -111,10 +115,16 @@ const Board = () => {
                             type="button"
                             className="individualNotesEdit"
                             onClick={() => editData(item)}>
-                            <img className="iconoEdit" alt="iconoEdit" src={iconoEdit} />
+                            <img className="iconoEdit" alt="iconoEdit" src={iconoEdit}/>
                         </button>
-
+                        <button
+                             type="button"
+                             className="individualNotesDelete"
+                             onClick={() => deleteNotesData(item.id)}>
+                             <img className="iconoDelete" alt="iconoDelete" src={iconoDelete}/>
+                        </button>
                     </div>
+
 
                 ))}
 

@@ -7,7 +7,8 @@ import {
   doc,
   getDocs,
   query,
-  updateDoc
+  updateDoc,
+  deleteDoc
   
   
 
@@ -49,12 +50,12 @@ export { GoogleAuthProvider };
 
 export const db = getFirestore(app);
 
-export  const saveNote = (title, description) =>{
-  addDoc(collection(db, "notas"), { title, description });
+export  const saveNote = (title, description, userId) =>{
+  addDoc(collection(db, `notas${userId}`), { title, description });
 };
 
-export async function getNotes() {
-  const collectNotes = query(collection(db, "notas"));
+export async function getNotes(userId) {
+  const collectNotes = query(collection(db, `notas${userId}`));
   return getDocs(collectNotes).then((QuerySnapshot) => {
     return QuerySnapshot.docs.map((docu) => ({
       data: docu.data(),
@@ -63,10 +64,14 @@ export async function getNotes() {
   });
 }
 
-export async function editNotes(item, newObj) {
-  await updateDoc(doc(collection(db, "notas"), item.id), {
+export async function editNotes(item, newObj, userId) {
+  await updateDoc(doc(collection(db, `notas${userId}`), item.id), {
     title: newObj.title,
     description: newObj.description,
   })
 }
 
+export async function onDeleteNotes (id,userId) {
+  const notesDelete = await deleteDoc (doc(db, `notas${userId}`, id));
+  return notesDelete
+}
