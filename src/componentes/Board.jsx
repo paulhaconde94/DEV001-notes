@@ -59,6 +59,7 @@ const Board = () => {
     };
     
     const deleteNotesData = (id, userId) => {
+        console.log(id, userId)
         onDeleteNotes(id, userId);
         getListNotes();
       };
@@ -81,9 +82,8 @@ const Board = () => {
             </div>
 
             <h3 className="add-text"> Agrega tu nota </h3>
-
             
-                <div className="postNote-container">
+                <div>
                 <div className="note-container">
 
                     <input
@@ -120,7 +120,7 @@ const Board = () => {
                         <button
                              type="button"
                              className="individualNotesDelete"
-                             onClick={() => deleteNotesData(item.id)}>
+                             onClick={() => deleteNotesData(item.id, userId)}>
                              <img className="iconoDelete" alt="iconoDelete" src={iconoDelete}/>
                         </button>
                     </div>

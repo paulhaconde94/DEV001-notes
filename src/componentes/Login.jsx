@@ -15,7 +15,7 @@ const Login = () => {
             localStorage.setItem("email", emailUser);
             navigate("/board");
         })
-            .catch(console.error)
+            //.catch(console.error)
     };
 
     return (
