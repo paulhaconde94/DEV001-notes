@@ -52,7 +52,6 @@
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  color-scheme: light dark;
   padding: 0.7em 1.2em;
   font-size: 1em;
   font-weight: 500;
@@ -60,8 +59,9 @@ button {
   font-size: 20px;
   background-color: #9777CD;
   cursor: pointer;
-  transition: border-color 0.25s;
 }
+
+
 
 .button-login {
   color: white;

@@ -18,6 +18,7 @@ const Board = () => {
         if(editStatusNote){
             console.log(oldData)
             await editNotes(oldData, { title: title, description: description } ,userId);
+            setEditStatusNote(false)
         }else{
             saveNote(title, description, userId);
         }
@@ -83,7 +84,7 @@ const Board = () => {
 
             <h3 className="add-text"> Agrega tu nota </h3>
             
-                <div>
+                <div className="all-container">
                 <div className="note-container">
 
                     <input
@@ -97,7 +98,7 @@ const Board = () => {
 
                     <textarea
                         placeholder="Toma una nota..."
-                        className="descripcionNotes"
+                        className="descriptionNotes"
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
                     />
@@ -109,21 +110,25 @@ const Board = () => {
                 <div className="box-note">
                 {listNotes.map((item, index) => (
                     <div className="individualNotesContainer" key={`${index}-${item.data.title}`}>
-                        <p>{item.data.title}</p>
-                        <p>{item.data.description}</p>
+                        <p className="tituloNota">{item.data.title}</p>
+                        <p className="descripcionNota">{item.data.description}</p>
+                        <div className="Container-button"> 
                         <button
                             type="button"
                             className="individualNotesEdit"
                             onClick={() => editData(item)}>
-                            <img className="iconoEdit" alt="iconoEdit" src={iconoEdit}/>
+                            {/* <i class='bx bx-edit-alt'></i> */}
+                            <img className="iconoEdit" alt="iconoEdit" src={iconoEdit}/> 
                         </button>
                         <button
                              type="button"
                              className="individualNotesDelete"
                              onClick={() => deleteNotesData(item.id, userId)}>
-                             <img className="iconoDelete" alt="iconoDelete" src={iconoDelete}/>
+                             {/* <i class='bx bx-trash'></i> */}
+                           <img className="iconoDelete" alt="iconoDelete" src={iconoDelete}/>
                         </button>
-                    </div>
+                        </div>
+                        </div>
 
 
                 ))}
